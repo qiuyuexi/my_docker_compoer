@@ -1,0 +1,10 @@
+2019/04/17 08:51:35 [error] 6#6: *2 open() "/var/www/html/project/favicon.ico" failed (2: No such file or directory), client: 172.18.0.1, server: _, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:81", referrer: "http://127.0.0.1:81/"
+2019/04/17 08:59:12 [warn] 1#1: conflicting server name "_" on 0.0.0.0:80, ignored
+2019/04/17 09:33:57 [warn] 1#1: conflicting server name "_" on 0.0.0.0:80, ignored
+2019/04/17 09:59:29 [warn] 1#1: conflicting server name "_" on 0.0.0.0:80, ignored
+2019/04/17 09:59:50 [warn] 1#1: conflicting server name "_" on 0.0.0.0:80, ignored
+2019/04/17 10:00:10 [warn] 1#1: conflicting server name "_" on 0.0.0.0:80, ignored
+2019/04/17 10:02:21 [emerg] 1#1: "worker_processes" directive is not allowed here in /etc/nginx/conf.d/default.conf:2
+2019/04/17 10:02:58 [emerg] 1#1: "events" directive is not allowed here in /etc/nginx/conf.d/default.conf:11
+2019/04/17 10:03:09 [emerg] 1#1: "http" directive is not allowed here in /etc/nginx/conf.d/default.conf:13
+2019/04/17 10:05:09 [error] 6#6: *1 open() "/usr/share/nginx/html/index.php" failed (2: No such file or directory), client: 172.19.0.1, server: localhost, request: "GET /index.php HTTP/1.1", host: "127.0.0.1:81"
