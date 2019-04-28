@@ -5,6 +5,13 @@
 * mysql 5.7
 * composer
 
+# 注意点
+* conf
+    * 配置文件目录，nginx,php.ini.my.cnf 统一放在该目录
+* dockerfile
+    * dockerfile目录，需要自己写dockerfile的统一放在该目录下
+        
+
 # 构建，不要被墙
 * docker-compose build --no-cache
 * docker-compose up
