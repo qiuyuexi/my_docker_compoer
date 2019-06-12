@@ -10,9 +10,12 @@ services:
       - ./log/nginx:/var/log/nginx
       - ./conf/nginx:/etc/nginx/conf.d/
     networks:
-      - webnet
+      default:
+        ipv4_address: 172.0.0.10
     depends_on:
       - php
+    extra_hosts:
+      - "host:172.0.0.1"
   php:
     #image: php:7.0-fpm
     build: ./dockerfile/php7.0-fpm/
@@ -21,10 +24,10 @@ services:
       - ./conf/php/php.ini:/usr/local/etc/php/conf.d/php.ini
       - ${PROJECT_PATH}:/www
     networks:
-      - webnet
-    depends_on:
-      - mysql
-      - redis
+      default:
+        ipv4_address: 172.0.0.20
+    extra_hosts:
+      - "host:172.0.0.10"
   mysql:
     image: mysql:5.7
     volumes:
@@ -36,15 +39,20 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: pwd
     networks:
-      - webnet
+      default:
+        ipv4_address: 172.0.0.30
     ports:
       - "3306:3306"
   redis:
     image: "redis:alpine"
     restart: always
     networks:
-      - webnet
+      default:
+        ipv4_address: 172.0.0.40
     ports:
       - "11211:11211"
 networks:
-  webnet:
+  default:
+    ipam:
+      config:
+        - subnet: 172.0.0.0/24
